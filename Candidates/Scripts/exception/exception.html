@@ -1,0 +1,15 @@
+﻿<form name="form" ng-submit="close()">
+	<div class="modal-header">
+		<span class="glyphicon glyphicon-exclamation-sign"></span> {{exception.header}}
+	</div>
+	<div class="modal-body">
+		<div class="form-group">
+			<pre>{{exception.friendlyMessage}}</pre>
+		</div>
+	</div>
+	<div class="modal-footer">
+		<button class="btn btn-primary">
+			<span class="glyphicon glyphicon-ok"></span> Ok
+		</button>
+	</div>
+</form>

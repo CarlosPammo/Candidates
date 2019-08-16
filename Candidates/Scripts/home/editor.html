@@ -1,0 +1,60 @@
+﻿<form>
+	<div class="modal-header">
+		<span class="glyphicon glyphicon-pencil"></span> Editor
+	</div>
+	<div class="modal-body">
+		<div class="form-group">
+			<div class="row">
+				<div class="col-lg-4 text-right">
+					<span>First Name</span>
+				</div>
+				<div class="col-lg-8">
+					<input class="form-control" type="text" ng-model="row.firstname" />
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-4 text-right">
+					<span>Last Name</span>
+				</div>
+				<div class="col-lg-8">
+					<input class="form-control" type="text" ng-model="row.lastname"/>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-4 text-right">
+					<span>Email Address</span>
+				</div>
+				<div class="col-lg-8">
+					<input class="form-control" type="text" ng-model="row.email"/>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-4 text-right">
+					<span>Phone Number</span>
+				</div>
+				<div class="col-lg-8">
+					<input class="form-control" type="text" ng-model="row.phoneNumber"/>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-4 text-right">
+					<span>Residential Zip Code</span>
+				</div>
+				<div class="col-lg-8">
+					<input class="form-control" type="text" ng-model="row.zipCode"/>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal-footer">
+		<div class="btn btn-default" ng-click="handler.save(row)">
+			<span class="glyphicon glyphicon-ok"></span> Ok
+		</div>
+		<div class="btn btn-default" ng-click="handler.close()">
+			<span class="glyphicon glyphicon-off"></span> Close
+		</div>
+	</div>
+</form>

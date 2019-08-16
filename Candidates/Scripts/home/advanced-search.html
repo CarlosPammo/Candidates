@@ -1,0 +1,119 @@
+﻿<form>
+	<div class="modal-header">
+		<span class="glyphicon glyphicon-pencil"></span> Advanced Search
+	</div>
+	<div class="modal-body">
+		<div class="form-group">
+			<div class="row">
+				<div class="col-lg-4 text-right">
+					<span>First Name</span>
+				</div>
+				<div class="col-lg-8">
+					<input class="form-control" type="text" ng-model="criteria.candidate.firstname"/>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-4 text-right">
+					<span>Last Name</span>
+				</div>
+				<div class="col-lg-8">
+					<input class="form-control" type="text" ng-model="criteria.candidate.lastname"/>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-4 text-right">
+					<span>Email Address</span>
+				</div>
+				<div class="col-lg-8">
+					<input class="form-control" type="text" ng-model="criteria.candidate.email"/>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-4 text-right">
+					<span>Phone Number</span>
+				</div>
+				<div class="col-lg-8">
+					<input class="form-control" type="text" ng-model="criteria.candidate.phoneNumber"/>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-4 text-right">
+					<span>Residential Zip Code</span>
+				</div>
+				<div class="col-lg-8">
+					<input class="form-control" type="text" ng-model="criteria.candidate.zipCode"/>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-4 text-right">
+					<span>Qualification</span>
+				</div>
+				<div class="col-lg-8">
+					<div class="btn-group" ng-class="up === 'true' ? 'dropup' : 'dropdown'">
+						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="false">
+							<span> {{criteria.qualification.name}} <span class="caret"></span></span>
+							<span class="sr-only">Toggle Dropdown</span>
+						</button>
+						<ul class="dropdown-menu">
+							<li ng-repeat="item in qualifications">
+								<a href="" ng-click="pick(item)">{{item.name}}</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-4 text-right">
+					<span>Type</span>
+				</div>
+				<div class="col-lg-8">
+					<div class="custom-control custom-radio">
+						<input type="radio" class="custom-control-input" id="professional" name="qualificationsType"
+							   ng-value="1" ng-model="criteria.type" checked>
+						<label class="custom-control-label" for="professional">(1) - Professional Certification</label>
+					</div>
+
+					<div class="custom-control custom-radio">
+						<input type="radio" class="custom-control-input" id="work-experience" name="qualificationsType"
+							   ng-value="2" ng-model="criteria.type">
+						<label class="custom-control-label" for="work-experience">(2) - Work Experience</label>
+					</div>
+
+					<div class="custom-control custom-radio">
+						<input type="radio" class="custom-control-input" id="college-degree" name="qualificationsType"
+							   ng-value="3" ng-model="criteria.type">
+						<label class="custom-control-label" for="college-degree">(3) - College Degree</label>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-4 text-right">
+					<span>Date</span>
+				</div>
+				<div class="col-lg-8">
+					<input type="text" class="form-control" datepicker-popup="MM/dd/yyyy"
+						   ng-model="criteria.date" is-open="status.opened" close-text="Close"
+						   placeholder="mm/dd/yyyy"/>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal-footer">
+		<div class="btn btn-default" ng-click="handler.search(criteria)">
+			<span class="glyphicon glyphicon-ok"></span> Ok
+		</div>
+		<div class="btn btn-default" ng-click="clear()">
+			<span class="glyphicon glyphicon-leaf"></span> Clear
+		</div>
+		<div class="btn btn-default" ng-click="handler.close()">
+			<span class="glyphicon glyphicon-off"></span> Close
+		</div>
+	</div>
+</form>
